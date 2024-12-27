@@ -5,11 +5,30 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      animation: {
+        "border-move": "borderMove 2s ease-in-out",
+      },
+      keyframes: {
+        borderMove: {
+          "0%": {
+            transform: "translateX(0)",
+            borderColor: "transparent",
+            borderWidth: "2px",
+          },
+          "50%": {
+            transform: "translateX(10px)",
+            borderColor: "#3490dc",
+            borderWidth: "4px",
+          },
+          "100%": {
+            transform: "translateX(0)",
+            borderColor: "transparent",
+            borderWidth: "2px",
+          },
+        },
       },
     },
   },
